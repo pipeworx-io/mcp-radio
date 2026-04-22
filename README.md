@@ -1,31 +1,57 @@
 # mcp-radio
 
-MCP server for internet radio station search via [Radio Browser](https://www.radio-browser.info/). Free, no auth required.
+Radio MCP — wraps Radio Browser API (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search_stations` | Search radio stations by name, ordered by popularity |
-| `get_top_stations` | Get most popular stations globally or by country |
-| `list_countries` | List countries with their station counts |
-| `list_tags` | List top genres/tags by station count |
+| `search_stations` | Search radio stations by name. Returns station name, URL, country, genres, and popularity vote count. Use when looking for a specific station or browsing by keyword. |
+| `list_countries` | Browse available countries with radio stations. Returns country names and station counts to help target your search geographically. |
+| `list_tags` | Discover radio genres and tags ranked by station count. Use to explore what categories are available before searching. |
 
-## Quickstart (Pipeworx Gateway)
+## Quick Start
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "radio_search_stations",
-      "arguments": { "query": "BBC" }
-    },
-    "id": 1
-  }'
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
+
+```json
+{
+  "mcpServers": {
+    "radio": {
+      "url": "https://gateway.pipeworx.io/radio/mcp"
+    }
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Radio data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
