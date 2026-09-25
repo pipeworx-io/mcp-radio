@@ -1,14 +1,32 @@
 {
   "name": "@pipeworx/mcp-radio",
-  "version": "1.0.0",
-  "description": "MCP server for internet radio station search via Radio Browser",
+  "version": "1.0.1",
+  "description": "Radio MCP — wraps Radio Browser API (free, no auth)",
+  "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "license": "MIT",
+  "bin": {
+    "mcp-radio": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "radio"],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-radio.git"
+    "url": "git+https://github.com/pipeworx-io/mcp-radio.git"
   },
-  "files": ["src"]
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-073daf0fcb36165f8b76b08fc86fa4dcb27d98113ae30c8fab4560e1368b7b29",
+    "sourceCommit": "00c836ddeaecbdd581dcfb0fb1842efea104006e"
+  }
 }
