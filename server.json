@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/radio",
   "title": "Radio",
   "description": "Radio MCP — wraps Radio Browser API (free, no auth)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://pipeworx.io/packs/radio",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-radio",
