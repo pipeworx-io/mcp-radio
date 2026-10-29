@@ -1,0 +1,60 @@
+[
+  {
+    "name": "search_stations",
+    "description": "Search radio stations by name. Returns station name, URL, country, genres, and popularity vote count. Use when looking for a specific station or browsing by keyword.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Station name to search for."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of results to return. Defaults to 10."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_top_stations",
+    "description": "Get trending radio stations ranked by popularity, optionally filtered by country (e.g., 'US', 'GB', 'DE'). Returns station URLs, genres, and vote counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "number",
+          "description": "Number of stations to return. Defaults to 10."
+        },
+        "country": {
+          "type": "string",
+          "description": "Filter by country name (e.g. \"Germany\", \"United States\"). Omit for global results."
+        }
+      }
+    }
+  },
+  {
+    "name": "list_countries",
+    "description": "Browse available countries with radio stations. Returns country names and station counts to help target your search geographically.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "list_tags",
+    "description": "Discover radio genres and tags ranked by station count. Use to explore what categories are available before searching.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of tags to return. Defaults to 20."
+        }
+      }
+    }
+  }
+]
