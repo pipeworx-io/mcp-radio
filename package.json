@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-radio",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Radio MCP — wraps Radio Browser API (free, no auth)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "radio",
     "gatewaySlug": "radio",
-    "sourceHash": "v1-b291c94237ff705c51bdaa425590344bae48243360d557540ec0a9d3270122ac",
-    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
+    "sourceHash": "v1-4bf094e0643506ecac58a37f9150aa7dc44d0f7400196c12eeb9918e83a6a236",
+    "sourceCommit": "db27387ed3ef7ec4805d465f7964a7f65f937006"
   }
 }
